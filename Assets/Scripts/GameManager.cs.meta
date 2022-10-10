@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fef90dcbb17236f4a81e6fb4012a4da3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - uiText: {instanceID: 0}
+  - winnerSound1: {fileID: 6446070499569503603, guid: b656507bd0400f448a9bf0bc06180df5, type: 3}
+  - winnerSound2: {fileID: 6446070499569503603, guid: b656507bd0400f448a9bf0bc06180df5, type: 3}
+  - loserSound: {fileID: 5068342761853323823, guid: 8279eb5f88181e644a47e57fd8f1576e, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
