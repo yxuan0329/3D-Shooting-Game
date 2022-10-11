@@ -13,9 +13,7 @@ Unity version: 2020.3.40
 
 # How to start the game
 
-  Firstly, download or clone the repository.
-
-  Check the folder IDVR_311553051_HW1,and  open "Shoot the Gummy.exe".
+  Firstly, download or clone the repository, open "Shoot the Gummy.exe".
   Click the mouse to play the game. 
 
   ✨You can watch a 30-sec demo video on Youtube: https://youtu.be/oKJioVvkei0
