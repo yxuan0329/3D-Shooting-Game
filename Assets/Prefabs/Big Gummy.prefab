@@ -79,6 +79,8 @@ MonoBehaviour:
   rangeH: 5
   rangeV: 1
   speed: 2
+  HpLeft: 0
+  deathParticles: {fileID: 2681903263799708000, guid: dc2b81a3922cfc44c8ce2fd9ff5015ce, type: 3}
 --- !u!1001 &1825885197159089240
 PrefabInstance:
   m_ObjectHideFlags: 0

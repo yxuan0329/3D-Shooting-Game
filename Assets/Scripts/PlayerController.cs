@@ -12,6 +12,12 @@ public class PlayerController : MonoBehaviour
     // Gun
     public GameObject gun;
 
+    // move
+    public float moveSpeed = 2200f;
+    Vector2 move;
+
+    Rigidbody rb;
+
     // bullet prefab
     public GameObject bulletPrefab;
 
@@ -32,11 +38,18 @@ public class PlayerController : MonoBehaviour
     {
         gm = GameObject.FindObjectOfType<GameManager>();
         popAudioSrc = GetComponent<AudioSource>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
         transform.eulerAngles = new Vector3(pitch, yaw, 0f);
+        //movement();
+    }
+
+    void OnMove(InputValue value)
+    {
+        move = value.Get<Vector2>();
     }
 
     void OnFire()
@@ -78,5 +91,35 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Application lost focus");
         }
+    }
+
+    void movement()
+    {
+        Vector3 vec = new Vector3(0, 0, 0);
+        Vector3 temp;
+        if (move.y > 0)
+        {
+            temp = new Vector3(gun.transform.forward.x, 0, gun.transform.forward.z);
+            vec += Vector3.Normalize(temp);
+        }
+        else if (move.y < 0)
+        {
+            temp = new Vector3(-gun.transform.forward.x, 0, -gun.transform.forward.z);
+            vec += Vector3.Normalize(temp);
+        }
+
+        if (move.x > 0)
+        {
+            temp = new Vector3(gun.transform.right.x, 0, gun.transform.right.z);
+            vec += Vector3.Normalize(temp);
+        }
+        else if (move.x < 0)
+        {
+            temp = new Vector3(-gun.transform.right.x, 0, -gun.transform.right.z);
+            vec += Vector3.Normalize(temp);
+        }
+        rb.velocity = Vector3.Normalize(vec) * moveSpeed * Time.deltaTime;
+
+
     }
 }

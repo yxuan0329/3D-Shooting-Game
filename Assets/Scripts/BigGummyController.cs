@@ -32,6 +32,8 @@ public class BigGummyController : MonoBehaviour
     // HP Left
     public int HpLeft;
 
+    public ParticleSystem deathParticles;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -121,6 +123,7 @@ public class BigGummyController : MonoBehaviour
         if (currState == State.Dead) return;
 
         HpLeft--;
+        Instantiate(deathParticles/*, transform.position, Quaternion.*/);
         Debug.Log(HpLeft);
 
         // set the state to dead if count = 10
